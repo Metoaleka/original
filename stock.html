@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="am">
 <head>
@@ -60,11 +60,37 @@
 
         /* PRODUCT CARD */
         .product-card {
+            position: relative;
             background: #111;
             border: 2px solid #fff;
             border-radius: 12px;
             padding: 15px;
             overflow: hidden;
+        }
+
+        /* =========================================
+           NEW ITEM
+           
+           ONLY products with class="new-item"
+           will show the green NEW ITEM label.
+           
+           If you don't want it to show,
+           simply remove "new-item" from the card.
+           ========================================= */
+
+        .new-item::before {
+            content: "NEW ITEM";
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: #00ff00;
+            color: #000;
+            padding: 7px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 900;
+            border: 2px solid #000;
+            z-index: 2;
         }
 
         /* PRODUCT IMAGE */
@@ -190,7 +216,11 @@
     <div class="products">
 
 
-        <!-- PRODUCT 1 -->
+        <!-- ================================= -->
+        <!-- PRODUCT 1 - NOT NEW -->
+        <!-- No "new-item" = no green label -->
+        <!-- ================================= -->
+
         <div class="product-card">
 
             <img src="BowsawBlade.jpg" alt="Bowsaw Blade">
@@ -206,8 +236,12 @@
         </div>
 
 
-        <!-- PRODUCT 2 -->
-        <div class="product-card">
+        <!-- ================================= -->
+        <!-- PRODUCT 2 - NEW -->
+        <!-- Add "new-item" to show NEW ITEM -->
+        <!-- ================================= -->
+
+        <div class="product-card new-item">
 
             <img src="Brush.jpg" alt="Brush">
 
@@ -222,7 +256,10 @@
         </div>
 
 
-        <!-- PRODUCT 3 -->
+        <!-- ================================= -->
+        <!-- PRODUCT 3 - NOT NEW -->
+        <!-- ================================= -->
+
         <div class="product-card">
 
             <img src="DoorS.jpg" alt="Door">
@@ -238,8 +275,11 @@
         </div>
 
 
-        <!-- PRODUCT 4 -->
-        <div class="product-card">
+        <!-- ================================= -->
+        <!-- PRODUCT 4 - NEW -->
+        <!-- ================================= -->
+
+        <div class="product-card new-item">
 
             <img src="key.jpg" alt="Key">
 
@@ -255,7 +295,7 @@
 
 
         <!-- ================================= -->
-        <!-- PRODUCT 5 -->
+        <!-- PRODUCT 5 - NOT NEW -->
         <!-- CHANGE IMAGE AND NAME -->
         <!-- ================================= -->
 
@@ -275,10 +315,10 @@
 
 
         <!-- ================================= -->
-        <!-- PRODUCT 6 -->
+        <!-- PRODUCT 6 - NEW -->
         <!-- ================================= -->
 
-        <div class="product-card">
+        <div class="product-card new-item">
 
             <img src="Shovel.jpg" alt="Product Name">
 
@@ -294,7 +334,7 @@
 
 
         <!-- ================================= -->
-        <!-- PRODUCT 7 -->
+        <!-- PRODUCT 7 - NOT NEW -->
         <!-- ================================= -->
 
         <div class="product-card">
@@ -313,10 +353,10 @@
 
 
         <!-- ================================= -->
-        <!-- PRODUCT 8 -->
+        <!-- PRODUCT 8 - NEW -->
         <!-- ================================= -->
 
-        <div class="product-card">
+        <div class="product-card new-item">
 
             <img src="MeTape.jpg" alt="Product Name">
 
@@ -332,7 +372,7 @@
 
 
         <!-- ================================= -->
-        <!-- PRODUCT 9 -->
+        <!-- PRODUCT 9 - NOT NEW -->
         <!-- ================================= -->
 
         <div class="product-card">
@@ -355,8 +395,29 @@
         <!-- ================================= -->
 
         <!--
-
+        
+        NOT NEW:
+        
         <div class="product-card">
+
+            <img src="IMAGE-FILENAME.jpg" alt="PRODUCT NAME">
+
+            <div class="product-name">
+                PRODUCT NAME
+            </div>
+
+            <div class="stock in-stock">
+                ✓ IN STOCK
+            </div>
+
+        </div>
+
+
+        NEW ITEM:
+        
+        Just add "new-item" like this:
+
+        <div class="product-card new-item">
 
             <img src="IMAGE-FILENAME.jpg" alt="PRODUCT NAME">
 
@@ -396,6 +457,5 @@
 
 </body>
 </html>
-```
 
 
